@@ -1,0 +1,25 @@
+{
+  "name": "cryptocurrency_tool",
+  "version": "1.0.0",
+  "description": "crypto price app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albullington/hrsf93-mini-apps-2.git"
+  },
+  "author": "Amanda Bullington",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albullington/hrsf93-mini-apps-2/issues"
+  },
+  "homepage": "https://github.com/albullington/hrsf93-mini-apps-2#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.8.3"
+  }
+}
