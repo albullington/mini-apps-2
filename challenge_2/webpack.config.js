@@ -2,7 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: './client/index.js',
+  entry: [
+    'react-hot-loader/patch',
+    './client/index.js',
+  ],
   module: {
     rules: [
       {
@@ -24,5 +27,12 @@ module.exports = {
     filename: 'bundle.js',
     path: path.join(__dirname + '/public')
   }, 
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    contentBase: './public',
+    hot: true
+  },
   mode: 'development',
 }
