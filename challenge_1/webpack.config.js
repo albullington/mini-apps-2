@@ -1,23 +1,23 @@
-import path from 'path';
+const path = require('path');
 
 module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['react', 'es2015']
           }
         }
       }
     ]
   },
-  entry: './src/index.js',
+  entry: './client/index.js',
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '/public/dist'),
     filename: 'bundle.js'
   }
 }
