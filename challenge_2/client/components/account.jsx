@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Address from './address';
 
 class Account extends Component {
   constructor(props) {
@@ -6,9 +7,6 @@ class Account extends Component {
 
     this.state = {
       view: 'account',
-      name: '',
-      email: '',
-      password: '',
     };
   }
 
@@ -23,17 +21,17 @@ class Account extends Component {
       return (
         <div>
           <form>
-            <label>
+            <label htmlFor="name">
             Name:
               <input type="text" name="name" />
             </label>
             <br />
-            <label>
+            <label htmlFor="email">
             Email:
               <input type="text" name="email" />
             </label>
             <br />
-            <label>
+            <label htmlFor="password">
             Password:
               <input type="text" name="password" />
             </label>
