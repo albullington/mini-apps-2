@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Account from './account';
 
 class App extends Component {
   constructor(props) {
@@ -6,24 +7,31 @@ class App extends Component {
 
     this.state = {
       view: 'homepage',
-    }
+    };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
+  handleClick() {
     this.setState({
-      view: e.target.value,
-    })
+      view: 'account',
+    });
   }
 
   render() {
-    return (
-      <div>
-        <h4>Click below to checkout</h4>
-        <button onClick={this.handleClick}>Checkout</button>
-      </div>
-    )
+    if (this.state.view === 'homepage') {
+      return (
+        <div>
+          <h4>Click below to checkout</h4>
+          <button onClick={this.handleClick}>Checkout</button>
+        </div>
+      );
+    }
+    if (this.state.view === 'account') {
+      return (
+        <Account />
+      );
+    }
   }
 }
 
