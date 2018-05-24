@@ -4,8 +4,8 @@
   "description": "Multistep Checkout",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "compile": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,17 @@
   "dependencies": {
     "express": "^4.16.3",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "nodemon": "^1.17.5",
+    "react-hot-loader": "^4.2.0"
   }
 }
