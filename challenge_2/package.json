@@ -1,0 +1,23 @@
+{
+  "name": "challenge_2",
+  "version": "1.0.0",
+  "description": "Multistep Checkout",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albullington/hrsf93-mini-apps-2.git"
+  },
+  "author": "Amanda Bullington",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albullington/hrsf93-mini-apps-2/issues"
+  },
+  "homepage": "https://github.com/albullington/hrsf93-mini-apps-2#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
