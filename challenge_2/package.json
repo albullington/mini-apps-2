@@ -4,7 +4,7 @@
   "description": "Multistep Checkout",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon server/server.js",
     "compile": "webpack --watch"
   },
   "repository": {
