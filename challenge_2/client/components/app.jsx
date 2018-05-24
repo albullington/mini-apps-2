@@ -1,38 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Home from './home';
 import Account from './account';
+import Address from './address';
+import Billing from './billing';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const App = () => (
+  <Router>
+    <div>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/account">Account</Link></li>
+        <li><Link to="/address">Address</Link></li>
+        <li><Link to="/billing">Billing</Link></li>
+      </ul>
 
-    this.state = {
-      view: 'homepage',
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState({
-      view: 'account',
-    });
-  }
-
-  render() {
-    if (this.state.view === 'homepage') {
-      return (
-        <div>
-          <h4>Click below to checkout</h4>
-          <button onClick={this.handleClick}>Checkout</button>
-        </div>
-      );
-    }
-    if (this.state.view === 'account') {
-      return (
-        <Account />
-      );
-    }
-  }
-}
+      <hr />
+      <Route exact path="/" component={Home} />
+      <Route path="/account" component={Account} />
+      <Route path="/address" component={Address} />
+      <Route path="/billing" component={Billing} />
+    </div>
+  </Router>
+);
 
 export default App;

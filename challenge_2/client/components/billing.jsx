@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import App from './app';
+import Home from './home';
 
 class Billing extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class Billing extends Component {
     }
     if (this.state.view === 'homepage') {
       return (
-        <App />
+        <Home />
       );
     }
   }
