@@ -4,7 +4,7 @@
   "description": "crypto price app",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "compile": "webpack --watch"
   },
   "repository": {
@@ -26,7 +26,9 @@
     "webpack": "^4.8.3"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "express": "^4.16.3",
+    "nodemon": "^1.17.5",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   }

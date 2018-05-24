@@ -1,9 +1,9 @@
 import React from 'react';
 
-const App = () => {
+const App = () => (
   <div>
-    Rendering App
+    <p>Rendering App</p>
   </div>
-}
+);
 
 export default App;
