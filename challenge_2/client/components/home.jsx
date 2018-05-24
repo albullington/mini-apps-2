@@ -1,38 +1,12 @@
-import React, { Component } from 'react';
-import Account from './account';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
+const Home = () => (
+  <div>
+    <h4>Click below to checkout</h4>
+    <Link to="/account"><button>Checkout</button></Link>
+  </div>
+);
 
-    this.state = {
-      view: 'homepage',
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState({
-      view: 'account',
-    });
-  }
-
-  render() {
-    if (this.state.view === 'homepage') {
-      return (
-        <div>
-          <h4>Click below to checkout</h4>
-          <button onClick={this.handleClick}>Checkout</button>
-        </div>
-      );
-    }
-    if (this.state.view === 'account') {
-      return (
-        <Account />
-      );
-    }
-  }
-}
 
 export default Home;
