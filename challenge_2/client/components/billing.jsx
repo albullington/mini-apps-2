@@ -1,27 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Billing = () => (
+const Billing = ({ handleChange }) => (
   <div>
     <form>
-      <label htmlFor="credit-card-number">
+      <label htmlFor="creditcard">
       Credit Card Number:
-        <input type="text" name="credit-card-number" />
+        <input type="text" name="creditcard" onChange={handleChange} />
       </label>
       <br />
-      <label htmlFor="expiry-date">
+      <label htmlFor="expirydate">
       Expiry Date:
-        <input type="text" name="expiry-date" />
+        <input type="text" name="expirydate" onChange={handleChange} />
       </label>
       <br />
       <label htmlFor="cvv">
       CVV:
-        <input type="text" name="cvv" />
+        <input type="text" name="cvv" onChange={handleChange} />
       </label>
       <br />
-      <label htmlFor="billing-zip-code">
+      <label htmlFor="billingzip">
       Billing Zip Code:
-        <input type="text" name="billing-zip-code" />
+        <input type="text" name="billingzip" onChange={handleChange} />
       </label>
       <br />
     </form>
