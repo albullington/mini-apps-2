@@ -25,7 +25,7 @@ const Billing = () => (
       </label>
       <br />
     </form>
-    <Link to="/"><button>Purchase</button></Link>
+    <Link to="/confirm"><button>Next</button></Link>
   </div>
 );
 

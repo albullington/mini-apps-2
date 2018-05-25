@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello world');
@@ -13,14 +15,7 @@ const port = 3001;
 
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
 
-app.post('/account', (req, res) => {
-  res.sendStatus(201).send('account info posted');
-});
-
-app.patch('/address', (req, res) => {
-  res.sendStatus(204).send('address info updated');
-});
-
-app.patch('/billing', (req, res) => {
-  res.sendStatus(204).send('billing info updated');
+app.post('/confirm', (req, res) => {
+  console.log(req.body, 'this is data received by server');
+  res.send('account info posted');
 });

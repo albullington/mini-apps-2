@@ -4,6 +4,7 @@ import Home from './home';
 import Account from './account';
 import Address from './address';
 import Billing from './billing';
+import Confirm from './confirm';
 
 const App = () => (
   <Router>
@@ -12,6 +13,7 @@ const App = () => (
       <Route path="/account" component={Account} />
       <Route path="/address" component={Address} />
       <Route path="/billing" component={Billing} />
+      <Route path="/confirm" component={Confirm} />
     </div>
   </Router>
 );
