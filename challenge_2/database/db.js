@@ -9,24 +9,24 @@ const knex = require('knex')({
 });
 
 knex.schema.createTable('users', (table) => {
-  table.increments('id');
-  table.string('name');
-  table.string('email');
-  table.string('password');
+  table.increments('id').unsigned().primary();
+  table.string('name', 30).nullable();
+  table.string('email', 20).nullable();
+  table.string('password', 20).nullable();
 }).createTable('addresses', (table) => {
-  table.increments('id');
-  table.string('line1');
-  table.string('line2');
-  table.string('city');
-  table.string('state');
-  table.string('zipcode');
+  table.increments('id').unsigned().primary();
+  table.string('line1', 40).nullable();
+  table.string('line2', 40).nullable();
+  table.string('city', 20).nullable();
+  table.string('state', 20).nullable();
+  table.integer('zipcode', 10).nullable();
   table.integer('user_id').unsigned().references('users.id');
 }).createTable('payments', (table) => {
-  table.increments('id');
-  table.string('creditcard');
-  table.string('expirydate');
-  table.string('cvv');
-  table.string('billingzip');
+  table.increments('id').unsigned().primary();
+  table.integer('creditcard', 20).nullable();
+  table.date('expirydate', 20).nullable();
+  table.integer('cvv', 3).nullable();
+  table.integer('billingzip', 10).nullable();
   table.integer('user_id').unsigned().references('users.id');
 }).then(() => {
   return knex.insert({ name: 'Amanda' }).into('users');
@@ -34,3 +34,5 @@ knex.schema.createTable('users', (table) => {
   .catch((e) => {
     console.log(e);
   });
+
+module.exports = knex;
