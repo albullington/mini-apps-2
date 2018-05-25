@@ -1,0 +1,21 @@
+{
+  "name": "challenge_3",
+  "version": "1.0.0",
+  "description": "Minesweeper",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albullington/hrsf93-mini-apps-2/tree/master/challenge_3"
+  },
+  "author": "Amanda Bullington",
+  "license": "ISC",
+  "dependencies": {
+    "create-react-app": "^1.5.2",
+    "react-redux": "^5.0.7"
+  },
+  "devDependencies": {}
+}
