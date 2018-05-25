@@ -1,47 +1,42 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import { Link } from 'react-router-dom';
 
-class Confirm extends Component {
-  constructor() {
-    super();
+const Confirm = ({ data, handleClick }) => {
+  const {
+    name,
+    email,
+    password,
+    line1,
+    line2,
+    city,
+    state,
+    zipcode,
+    creditcard,
+    expirydate,
+    cvv,
+    billingzip,
+  } = data;
 
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    const {
-      name,
-      email,
-      password,
-    } = this.state;
-
-    const data = {
-      n: name,
-      e: email,
-      p: password,
-    };
-
-    fetch('http://localhost:3001/confirm', {
-      method: 'POST',
-      body: data,
-    }).then((res) => {
-      console.log(res, 'response on client account page');
-    }).catch((err) => {
-      throw err;
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <h4>Double check your data and click purchase</h4>
-        {/* {name}
-        {email}
-        {password} */}
-        <button>Purchase</button>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h4>Double check your data and click purchase</h4>
+      <ul>Name: {name}</ul>
+      <ul>Email: {email}</ul>
+      <ul>Password: {password}</ul>
+      <br />
+      <ul>Address Line 1: {line1}</ul>
+      <ul>Address Line 2: {line2}</ul>
+      <ul>City: {city}</ul>
+      <ul>State: {state}</ul>
+      <ul>Zip Code: {zipcode}</ul>
+      <br />
+      <ul>Credit Card Number: {creditcard}</ul>
+      <ul>Expiry Date: {expirydate}</ul>
+      <ul>CVV: {cvv}</ul>
+      <ul>Billing Zip Code: {billingzip}</ul>
+      <button onClick={handleClick}>Purchase</button>
+    </div>
+  );
+};
 
 export default Confirm;

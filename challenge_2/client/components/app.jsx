@@ -26,6 +26,7 @@ class App extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(e) {
@@ -33,6 +34,23 @@ class App extends Component {
 
     this.setState({
       [name]: value,
+    });
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    const data = this.state;
+    this.submitData(data);
+  }
+
+  submitData(data) {
+    fetch('http://localhost:3001/confirm', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log(res, 'response on client account page');
+    }).catch((err) => {
+      throw err;
     });
   }
 
@@ -44,7 +62,7 @@ class App extends Component {
           <Route path="/account" render={() => <Account handleChange={this.handleChange} />} />
           <Route path="/address" render={() => <Address handleChange={this.handleChange} />} />
           <Route path="/billing" render={() => <Billing handleChange={this.handleChange} />} />
-          <Route path="/confirm" component={Confirm} />
+          <Route path="/confirm" render={() => <Confirm data={this.state} handleClick={this.handleClick} />} />
         </div>
       </Router>
     );
