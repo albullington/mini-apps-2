@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Square = () => (
-  <div>I'm a square</div>
+const Square = ({ value }) => (
+  <td className={value}>I'm a square</td>
 );
 
 export default Square;
