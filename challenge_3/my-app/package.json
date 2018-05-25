@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
     "react-scripts": "1.1.4"
   },
   "scripts": {
@@ -12,5 +13,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albullington/hrsf93-mini-apps-2/tree/master/challenge_3"
+  },
+  "author": "Amanda Bullington"
 }
