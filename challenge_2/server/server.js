@@ -16,6 +16,7 @@ const port = 3001;
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
 
 app.post('/confirm', (req, res) => {
-  console.log(req.body, 'this is data received by server');
+  const data = req.body.body;
+  console.log(req.body.body, 'this is data received by server');
   res.send('account info posted');
 });

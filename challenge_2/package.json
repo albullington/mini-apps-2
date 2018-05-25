@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/albullington/hrsf93-mini-apps-2#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "pg": "^7.4.3",

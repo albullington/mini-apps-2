@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import axios from 'axios';
 import Home from './home';
 import Account from './account';
 import Address from './address';
@@ -44,9 +45,8 @@ class App extends Component {
   }
 
   submitData(data) {
-    fetch('http://localhost:3001/confirm', {
-      method: 'POST',
-      body: JSON.stringify(data),
+    axios.post('http://localhost:3001/confirm', {
+      body: data,
     }).then((res) => {
       console.log(res, 'response on client account page');
     }).catch((err) => {
