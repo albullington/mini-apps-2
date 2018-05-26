@@ -79,7 +79,31 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App() {\n  return _react2.default.createElement(\n    'div',\n    null,\n    'React'\n  );\n};\n\nexports.default = App;\n\n//# sourceURL=webpack:///./client/components/app.jsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _search = __webpack_require__(/*! ./search */ \"./client/components/search.jsx\");\n\nvar _search2 = _interopRequireDefault(_search);\n\nvar _list = __webpack_require__(/*! ./list */ \"./client/components/list.jsx\");\n\nvar _list2 = _interopRequireDefault(_list);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar App = function (_Component) {\n  _inherits(App, _Component);\n\n  function App() {\n    _classCallCheck(this, App);\n\n    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));\n\n    _this.state = {\n      query: ''\n    };\n\n    _this.handleChange = _this.handleChange.bind(_this);\n    return _this;\n  }\n\n  _createClass(App, [{\n    key: 'handleChange',\n    value: function handleChange(e) {\n      e.preventDefault();\n\n      this.setState({\n        query: e.target.value\n      });\n    }\n  }, {\n    key: 'searchHistoricalData',\n    value: function searchHistoricalData(query) {}\n  }, {\n    key: 'render',\n    value: function render() {\n      return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n          'h4',\n          null,\n          'Enter your search term to learn about historical events'\n        ),\n        _react2.default.createElement(_search2.default, { handleChange: this.handleChange }),\n        _react2.default.createElement('hr', null),\n        _react2.default.createElement(_list2.default, null)\n      );\n    }\n  }]);\n\n  return App;\n}(_react.Component);\n\n;\n\nexports.default = App;\n\n//# sourceURL=webpack:///./client/components/app.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/list.jsx":
+/*!************************************!*\
+  !*** ./client/components/list.jsx ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar List = function List() {\n  return _react2.default.createElement(\n    'div',\n    null,\n    'List of historical data'\n  );\n};\n\nexports.default = List;\n\n//# sourceURL=webpack:///./client/components/list.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/search.jsx":
+/*!**************************************!*\
+  !*** ./client/components/search.jsx ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Search = function Search(_ref) {\n  var handleChange = _ref.handleChange;\n  return _react2.default.createElement(\"input\", { type: \"text\", onChange: handleChange });\n};\n\nexports.default = Search;\n\n//# sourceURL=webpack:///./client/components/search.jsx?");
 
 /***/ }),
 
