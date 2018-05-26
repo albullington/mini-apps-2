@@ -6,6 +6,9 @@ class Board extends Component {
     super();
 
     this.state = {
+      height: 10,
+      width: 10,
+      totalMines: 10,
       gameWon: false,
       minesPlanted: 0,
       rows: this.createGrid(),
@@ -15,25 +18,30 @@ class Board extends Component {
   }
 
   handleClick(e) {
-    console.log('this square was clicked', e.target.value);
+    console.log('this square was clicked', e.target);
+  }
+
+  renderSquare(x, y) {
+    return <Square 
+      key={`square-col${x}-row${y}`}
+      isEmpty="false" 
+      isBomb="false"
+      numAdjacent="0"
+      isShown="false"
+      value={`square-col${x}-row${y}`}
+      handleClick={this.handleClick}
+      location={`-col${x}-row${y}`}
+    />
   }
 
   createGrid() {
     let rows = [];
-    for (let y = 0; y < 10; y++) {
+    for (let y = 1; y <= 10; y++) {
       const squares = [];
-      for (let x = 0; x < 10; x++) {
-        squares.push(<Square 
-          key={`square-col${x}-row${y}`}
-          isEmpty="false" 
-          isBomb="false"
-          numAdjacent="0"
-          isShown="false"
-          value={`square-col${x}-row${y}`}
-          handleClick={this.handleClick}
-        />);
+      for (let x = 1; x <= 10; x++) {
+        squares.push(this.renderSquare(x, y));
       }
-      rows.push(<tr key={y}>{squares}</tr>);
+      rows.push(<tr id={"row"+y} key={y}>{squares}</tr>);
     }
     return rows;
   }
@@ -44,8 +52,8 @@ class Board extends Component {
     } = this.state;
 
     return (
-      <table>
-        <tbody>
+      <table id="grid">
+        <tbody id="grid-1">
           {rows}
         </tbody>
       </table>
