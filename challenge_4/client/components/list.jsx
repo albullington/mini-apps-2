@@ -2,7 +2,7 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import Facts from './facts';
 
-const List = ({ query, data, perPage, handlePageClick }) => (
+const List = ({ query, data, pageCount, handlePageClick }) => (
   <div className="react-paginate">
     Learn more about {query === '' ? 'historical events' : query} below: 
     <br />
@@ -12,7 +12,7 @@ const List = ({ query, data, perPage, handlePageClick }) => (
       nextLabel={"next"}
       breakLabel={<a href="">...</a>}
       breakClassName={"break-me"}
-      pageCount={5}
+      pageCount={pageCount}
       marginPagesDisplayed={2}
       pageRangeDisplayed={3}
       onPageChange={handlePageClick}

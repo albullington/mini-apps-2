@@ -13,17 +13,25 @@ class App extends Component {
       data: [],
       offset: 0,
       perPage: 3,
+      pageCount: 0,
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
   }
 
-  handlePageClick() {
+  handlePageClick(data) {
     const {
+      perPage,
       query,
     } = this.state;
 
-    this.searchHistoricalData(query);
+    const { selected } = data;
+    const offset = Math.ceil(selected * perPage);
+
+    this.setState({ offset }, () => {
+      this.searchHistoricalData(query);
+    });
   }
 
   searchHistoricalData(query) {
@@ -35,6 +43,7 @@ class App extends Component {
       .then((res) => {
         this.setState({
           data: res.data,
+          pageCount: this.state.pageCount + 1,
         });
         console.log(res.data);
       })
@@ -57,7 +66,7 @@ class App extends Component {
     const {
       query,
       data,
-      perPage,
+      pageCount,
     } = this.state;
 
     return (
@@ -68,7 +77,7 @@ class App extends Component {
         <List
           query={query}
           data={data}
-          perPage={perPage}
+          pageCount={pageCount}
           handlePageClick={this.handlePageClick}
         />
       </div>
