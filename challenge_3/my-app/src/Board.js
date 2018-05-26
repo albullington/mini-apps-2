@@ -10,6 +10,12 @@ class Board extends Component {
       minesPlanted: 0,
       rows: this.createGrid(),
     }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    console.log('this square was clicked', e.target.value);
   }
 
   createGrid() {
@@ -24,6 +30,7 @@ class Board extends Component {
           numAdjacent="0"
           isShown="false"
           value={`square-col${x}-row${y}`}
+          handleClick={this.handleClick}
         />);
       }
       rows.push(<tr key={y}>{squares}</tr>);
