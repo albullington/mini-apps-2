@@ -1,3 +1,14 @@
+body {
+  font-family: Palatino;
+  background-color: #F5ECCE;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    width: 50%;
+  }
+};
+
 #react-paginate ul {
   display: inline-block;
   padding-left: 15px;

@@ -8,8 +8,8 @@ const List = ({ query, data, pageCount, handlePageClick }) => (
     <br />
     <Facts data={data} />
     <ReactPaginate 
-      previousLabel={"previous"}
-      nextLabel={"next"}
+      previousLabel={"go back"}
+      nextLabel={"see more"}
       breakLabel={<a href="">...</a>}
       breakClassName={"break-me"}
       pageCount={pageCount}

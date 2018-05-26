@@ -45,7 +45,7 @@ class App extends Component {
           data: res.data,
           pageCount: this.state.pageCount + 1,
         });
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => {
         throw err;
@@ -53,13 +53,17 @@ class App extends Component {
   }
 
   handleChange(e) {
+    const {
+      offset,
+    } = this.state;
+
     e.preventDefault();
 
     this.setState({
       query: e.target.value,
     });
 
-    this.searchHistoricalData(e.target.value, this.state.offset);
+    this.searchHistoricalData(e.target.value, offset);
   }
 
   render() {
