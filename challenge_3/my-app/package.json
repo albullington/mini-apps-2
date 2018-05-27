@@ -18,5 +18,8 @@
     "type": "git",
     "url": "https://github.com/albullington/hrsf93-mini-apps-2/tree/master/challenge_3"
   },
-  "author": "Amanda Bullington"
+  "author": "Amanda Bullington",
+  "devDependencies": {
+    "react-thunk": "^1.0.0"
+  }
 }

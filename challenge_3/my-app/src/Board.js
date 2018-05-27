@@ -6,8 +6,6 @@ class Board extends Component {
     super();
 
     this.state = {
-      height: 10,
-      width: 10,
       totalMines: 10,
       gameWon: false,
       minesPlanted: 0,
@@ -18,7 +16,7 @@ class Board extends Component {
   }
 
   handleClick(e) {
-    console.log('this square was clicked', e.target);
+    console.log('square clicked was', e.target.id);
   }
 
   renderSquare(x, y) {
@@ -41,10 +39,15 @@ class Board extends Component {
       for (let x = 1; x <= 10; x++) {
         squares.push(this.renderSquare(x, y));
       }
-      rows.push(<tr id={"row"+y} key={y}>{squares}</tr>);
+      rows.push(<tr id={"row"+y} key={"row"+y}>{squares}</tr>);
     }
     return rows;
   }
+
+  setMinesInGrid(totalMines) {
+    console.log('set mines');
+  }
+
 
   render() {
     const {
