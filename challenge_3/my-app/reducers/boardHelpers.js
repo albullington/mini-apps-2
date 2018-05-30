@@ -1,0 +1,1 @@
+import { defaultSquare } from './defaultStore';
